@@ -33,11 +33,15 @@ int main(int argc, char ** argv) {
 
 
 void timer(int seconds, char arr[]) {
-    int h = seconds / SECONDS_IN_HOUR;
-    int m = (seconds % SECONDS_IN_HOUR) / SECONDS_IN_MINUTE;
-    int s = seconds % SECONDS_IN_MINUTE;
+    int h;
+    int m;
+    int s;
 
     while (seconds > 0) {
+        h = seconds / SECONDS_IN_HOUR;
+        m = (seconds % SECONDS_IN_HOUR) / SECONDS_IN_MINUTE;
+        s = seconds % SECONDS_IN_MINUTE;
+
         printf("\r%s -> %02d:%02d:%02d", arr, h, m, s);
 
         fflush(stdout);
